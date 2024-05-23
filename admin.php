@@ -1,48 +1,26 @@
 <?php
-
-// Параметри підключення до бази даних
-$host = 'localhost'; // або IP-адреса сервера баз даних
-$port = '8889'; // порт (зазвичай 3306 для MySQL)
+$host = 'localhost'; 
+$port = '8889'; 
 $dbname = 'restaurant';
 $db_username = 'root';
 $db_password = 'root';
-
-// Створення з'єднання з базою даних
 $conn = mysqli_connect($host, $db_username, $db_password, $dbname, $port);
-
-// Перевірка з'єднання
 if (!$conn) {
     die("Не вдалося підключитися до бази даних: " . mysqli_connect_error());
 }
-
-// Отримання даних з форми
 $username_input = mysqli_real_escape_string($conn, $_POST["username"]);
 $password_input = mysqli_real_escape_string($conn, $_POST["password"]);
-
-// Запит для вибору користувача з бази даних
 $sql = "SELECT * FROM users WHERE username = '$username_input'";
 $result = mysqli_query($conn, $sql);
-
-// Перевірка результату запиту
 if (mysqli_num_rows($result) > 0) {
     $user = mysqli_fetch_assoc($result);
-    // Перевірка пароля
+
     if ($user['password'] === $password_input) {
-        // Користувач знайдений і пароль співпадає, авторизуємо його
         session_start();
         $_SESSION["username"] = $username_input;
         header("Location: admin_1.php");
         exit;
-    } else {
-        // Пароль неправильний
-        // echo "<p style='color: red;'>Неправильний логін або пароль</p>";
-    }
-} else {
-    // Користувача з таким ім'ям не знайдено
-    // echo "<p style='color: red;'>Неправильний логін або пароль</p>";
-}
-
-// Закриття з'єднання з базою даних
+    } 
 mysqli_close($conn);
 
 ?>
@@ -58,7 +36,7 @@ mysqli_close($conn);
     font-family: Arial, sans-serif;
     margin: 20;
     padding: 20;
-    background: linear-gradient(to bottom, #ffffff, #28a745); /* Один градієнт: білий зверху, зелений знизу */
+    background: linear-gradient(to bottom, #ffffff, #28a745); 
 }
 
 .menu {
@@ -68,25 +46,25 @@ mysqli_close($conn);
 
 .menu a {
     text-decoration: none;
-    color: #d63535; /* Темно-сірий колір тексту посилань */
+    color: #d63535; 
     font-size: 25px;
     margin: 0 70px;
 }
 
 .container {
-    background-color: #ffffff; /* Білий фон контейнера */
+    background-color: #ffffff; 
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    margin: 110px auto; /* Вертикальний відступ 50px відгориу */
+    margin: 110px auto; 
     max-width: 400px;
 }
 
 .container h1 {
     margin-top: 0;
     margin-bottom: 20px;
-    color: #333333; /* Темно-сірий колір тексту заголовку */
+    color: #333333; 
 }
 
 form {
@@ -98,7 +76,7 @@ form {
 label {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #333333; /* Темно-сірий колір тексту етикеток */
+    color: #333333; 
 }
 
 input[type="text"],
@@ -106,16 +84,16 @@ input[type="password"] {
     width: 300px;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #d63535; /* Червона рамка текстових полів */
+    border: 1px solid #d63535; 
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #28a745; /* Зелений фон кнопок */
-    color: #ffffff; /* Білий колір тексту кнопок */
-    border: 1px solid #28a745; /* Зелена рамка кнопок */
+    background-color: #28a745; 
+    color: #ffffff; 
+    border: 1px solid #28a745; 
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -123,8 +101,8 @@ button {
 }
 
 button:hover {
-    background-color: #d63535; /* Червоний фон кнопок при наведенні */
-    color: #ffffff; /* Зміна коліру тексту на білий при наведенні */
+    background-color: #d63535; 
+    color: #ffffff; 
 }
 
 .footer {
