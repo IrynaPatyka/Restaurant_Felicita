@@ -12,7 +12,7 @@
             background-color: #ffffff;
         }
         .nav-item {
-            color: #d63535; /* Кольор для посилань у меню */
+            color: #d63535; 
         }
         .sets {
             background-color: #f8f9fa;
@@ -23,8 +23,8 @@
             flex-wrap: wrap;
         }
         .set {
-            background-color: #28a745; /* Колір карточок */
-            color: #ffffff; /* Колір тексту у карточках */
+            background-color: #28a745;
+            color: #ffffff; 
             width: 30%;
             padding: 20px;
             margin-bottom: 20px;
@@ -58,7 +58,7 @@
             margin-top: 0;
             margin-bottom: 20px;
             text-align: center;
-            color: #d63535; /* Колір для заголовків у формі */
+            color: #d63535; 
         }
         .form-container label {
             display: block;
@@ -85,7 +85,7 @@
         .form-container button {
             width: 100%;
             padding: 10px;
-            background-color: #d63535; /* Колір кнопки */
+            background-color: #d63535; 
             color: #ffffff;
             border: none;
             border-radius: 5px;
@@ -93,10 +93,10 @@
             transition: background-color 0.3s;
         }
         .form-container button:hover {
-            background-color: #ab2525; /* Колір кнопки при наведенні */
+            background-color: #ab2525; 
         }
         .breakfast h1 {
-            color: #d63535; /* Колір заголовка */
+            color: #d63535; 
         }
     </style>
     <title>Ресторан</title>
@@ -182,7 +182,7 @@
             <div class="form-container">
                 <h2>Зробіть замовлення</h2>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <!-- Поля для вводу даних клієнта -->
+                 
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div style="flex: 1;">
                             <label for="customer_name">Ім'я:</label><br>
@@ -195,14 +195,14 @@
                     </div>
                     <label for="customer_phone">Номер телефону:</label><br>
                     <input type="tel" id="customer_phone" name="customer_phone" placeholder="Введіть ваш номер телефону" required><br><br>
-                    <!-- Випадаючий список для вибору сету -->
+                   
                     <label for="order_details">Оберіть сет-меню:</label><br>
                     <select id="order_details" name="order_details" required>
                         <option value="Сет 1">Сет 1</option>
                         <option value="Сет 2">Сет 2</option>
                         <option value="Сет 3">Сет 3</option>
                     </select><br><br>
-                    <!-- Кнопка для оформлення замовлення -->
+                    
                     <button type="submit" class="city-btn">Оформити замовлення</button>
                 </form>
             </div>
@@ -233,21 +233,20 @@
         $order_details = $_POST["order_details"];
 
         try {
-            // SQL запит для вставки замовлення в базу даних
+           
             $sql = "INSERT INTO orders1 (customer_name, customer_surname, phone, dishes, category) VALUES (:customer_name, :customer_surname, :phone, :dishes, 'Сніданок')";
 
             $stmt = $conn->prepare($sql);
 
-            // Параметри запиту
+       
             $stmt->bindParam(':customer_name', $customer_name);
             $stmt->bindParam(':customer_surname', $customer_surname);
             $stmt->bindParam(':phone', $customer_phone);
             $stmt->bindParam(':dishes', $order_details);
             
-            // Виконуємо запит
+          
             $stmt->execute();
 
-            // Очищаємо список замовлень
             $orders = [];
         } catch(PDOException $e) {
             echo "Помилка з'єднання: " . $e->getMessage();
