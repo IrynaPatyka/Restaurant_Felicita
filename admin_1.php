@@ -23,7 +23,7 @@
             exit;
         }
 
-        $tableName = 'orders1'; // Замініть на назву вашої таблиці замовлень
+        $tableName = 'orders1'; 
 
         $sql = "SELECT * FROM $tableName";
 
