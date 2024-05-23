@@ -2,7 +2,7 @@
     background-image: url(Коли.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 70vh; /* Змініть це значення на власний розмір, вказуючи висоту, яка вам підходить */
+    height: 70vh; 
 }
 body {
     font-family: sans-serif;
@@ -245,7 +245,6 @@ body {
 }
 
 
-/*----------Міста-------*/
 
 .city {
     background: linear-gradient(to bottom, #FFFFFF, #89c96b);
@@ -300,7 +299,6 @@ body {
 }
 
 
-/*----------------Галерея------------*/
 
 .gallery {
     padding-bottom: 100px;
@@ -334,7 +332,7 @@ body {
     color: #fff;
     text-align: center;
 }
-/*-------------------*/
+
 .city-img {
     width: 90%;
 }
