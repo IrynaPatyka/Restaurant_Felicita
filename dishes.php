@@ -8,14 +8,14 @@
 </head>
 <body>
     <div class='header'>
-        <!-- Ваш код для верхньої частини сторінки (навігація, логотип і т.д.) -->
+     
     </div>
 
     <main>
         <section class="menu">
             <h1>Меню</h1>
             <?php
-            // Підключення до бази даних
+            
         
             $dsn = 'mysql:host=localhost:8889;dbname=restaurant';
             $username = 'root';
@@ -24,16 +24,14 @@
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
-            // Перевірка з'єднання
+          
             if ($conn->connect_error) {
                 die("Помилка з'єднання з базою даних: " . $conn->connect_error);
             }
 
-            // SQL запит для вибору всіх страв
             $sql = "SELECT * FROM dishes";
             $result = $conn->query($sql);
 
-            // Виведення страв
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo "<div class='dish'>";
@@ -53,7 +51,7 @@
     </main>
 
     <div class='footer'>
-        <!-- Ваш код для нижньої частини сторінки -->
+    
     </div>
 </body>
 </html>
