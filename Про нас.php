@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
     <title>Про нас</title>
     <style>
-        /* Стилі для загальної структури */
+        
         body {
             background-color: #ffffff;
             color: #333333;
@@ -47,7 +47,7 @@
             gap: 20px;
         }
         .nav-item {
-            color: #d63535; /* Колір для посилань у меню */
+            color: #d63535; 
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
@@ -58,7 +58,7 @@
 
         /* Стилі для кухарів */
         .staff-header {
-            background-color: #d32f2f; /* Червоний колір */
+            background-color: #d32f2f; 
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -68,23 +68,23 @@
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
-            background-color: #fff; /* Білий колір */
+            background-color: #fff; 
         }
         .staff-member {
-            background-color: #4caf50; /* Зелений колір */
+            background-color: #4caf50; 
             border: 1px solid #ddd;
             border-radius: 8px;
             margin: 10px;
             padding: 20px;
-            width: 400px; /* Змінено ширину карток */
+            width: 400px; 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             color: white;
             text-align: center;
         }
         .staff-member img {
             border-radius: 50%;
-            width: 200px; /* Змінено розмір зображення */
-            height: 200px; /* Змінено розмір зображення */
+            width: 200px; 
+            height: 200px; 
             object-fit: cover;
         }
         .staff-member h2 {
@@ -92,11 +92,11 @@
         }
         .staff-member h3 {
             margin: 5px 0;
-            color: #ffeb3b; /* Жовтий колір для позиції */
+            color: #ffeb3b; 
         }
         .staff-member p {
-            font-size: 16px; /* Збільшено розмір шрифту */
-            line-height: 1.6; /* Збільшено інтервал між рядками */
+            font-size: 16px; 
+            line-height: 1.6;
         }
     </style>
 </head>
